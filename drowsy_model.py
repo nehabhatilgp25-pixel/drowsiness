@@ -70,7 +70,8 @@ model.summary() #summary about NN
 model.fit(train_data, validation_data = validation_data, epochs=20)
 #epoch -- number of times gone through dataset.
 
-model.save('drowsiness.h5') #saving the model, I'm guessing.
+model.save("drowsiness_tf2.h5", save_format="h5", include_optimizer=False)
+ #saving the model, I'm guessing. (this line is editted from the og code)
 
 from keras.models import load_model
 

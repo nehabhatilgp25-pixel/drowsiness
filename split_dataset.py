@@ -1,29 +1,30 @@
-import os
-import shutil
+import os #to interact with OS
+import shutil #file operations
 import random
 
 # ------------ SET THESE ------------
-SOURCE_OPEN = "Open_Eyes"
-SOURCE_CLOSED = "Closed_Eyes"
+SOURCE_OPEN = "Open_Eyes" #the file where the open eyes were stored
+SOURCE_CLOSED = "Closed_Eyes" #file where closed eyes were stored
 DEST = "data"   # final dataset folder
 # ----------------------------------
 
 # Create folders
-for split in ["train", "val", "test"]:
-    for cls in ["open", "closed"]:
-        os.makedirs(os.path.join(DEST, split, cls), exist_ok=True)
+for split in ["train", "val", "test"]: #just a loop
+    for cls in ["open", "closed"]: #another loop
+        os.makedirs(os.path.join(DEST, split, cls), exist_ok=True) #making the individual files of test, val, data with open and close below them.
+        #exist_ok=True suppresses an error if the directory already exists
 
 def split_and_copy(src_folder, dest_class_name):
-    images = os.listdir(src_folder)
-    random.shuffle(images)
+    images = os.listdir(src_folder) #
+    random.shuffle(images) #mixing up the images
 
-    n = len(images)
-    train_end = int(0.7 * n)
+    n = len(images) #number of images
+    train_end = int(0.7 * n) 
     val_end = int(0.9 * n)
 
-    train_files = images[:train_end]
-    val_files = images[train_end:val_end]
-    test_files = images[val_end:]
+    train_files = images[:train_end] #0 to 70%
+    val_files = images[train_end:val_end] #70% to 90%
+    test_files = images[val_end:] # 90% to 100%
 
     # copy to train
     for f in train_files:
