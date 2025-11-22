@@ -46,7 +46,7 @@ model = Sequential()
 #adds a layer: this one 
 model.add(Conv2D(32, (3,3), #? GB
                  activation = 'relu', #removes negative values.???? GB
-                 input_shape = (96,96,1) #shape of imgs, I presume))
+                 input_shape = (96,96,1)))
 model.add(MaxPooling2D(2,2)) #reducing resolution?
 model.add(Conv2D(64, (3,3), activation = 'relu'))
 model.add(MaxPooling2D(2,2))
