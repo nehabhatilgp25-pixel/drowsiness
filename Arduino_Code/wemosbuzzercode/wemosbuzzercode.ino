@@ -1,4 +1,5 @@
 #include <NinjaIoT.h>
+#include <entry.h>
 
 NinjaIoT iot;
 
