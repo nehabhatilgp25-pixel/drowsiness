@@ -8,4 +8,4 @@ First, the "working_eyes.py" file opens the user's webcam on their device (this 
 
 ## Future Scope
 
-This version of the system is just a prototype. Future versions could include the ESP Cam so that the system can physically be implemented in an actual car (right now it operates on the laptop). Future versions could also include check the car's location using GPS and accordingly call the driver's family if the driver is asleep for too long.
+This version of the system is just a prototype. Future versions could include the ESP Cam so that the system can physically be implemented in an actual car (right now it operates on the laptop). Future versions could also check the car's location using GPS and accordingly call the driver's family if the driver is asleep for too long.
